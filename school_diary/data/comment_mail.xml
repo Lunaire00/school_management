@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="comment_mail" model="mail.template">
+            <field name="name">Parents Comment Mail</field>
+            <field name="model_id" ref="school_diary.model_comment"/>
+            <field name="subject">{{ object.student_id.name}}</field>
+            <field name="email_from">{{ (user.email_formatted) }}</field>
+            <field name="partner_to">{{ object.student_id.id }}</field>
+            <field name="body_html" type="html">
+<div>
+    <p>
+        <t t-set="student_mail" t-value="object.student_id.name"/>
+        <t t-set="type_comment_id_mail" t-value="object.type_comment_id.name"/>
+        <t t-set="class_mail" t-value="object.student_class.name"/>
+        <t t-set="gravity_mail" t-value="object.rel_gravity_level"/>
+        <t t-set="teacher_mail" t-value="object.teacher_id.name"/>
+
+        hello,
+        <br/><br/>
+        the student 
+        <t t-out="student_mail"/> in class <t t-out="class_mail"/>
+        <br></br>
+        <hr></hr>
+        comment : <t t-out="type_comment_id_mail"/>
+        <br></br>
+        gravity level : <t t-out="gravity_mail"/>
+        <br></br>
+        <hr></hr>
+        By teacher : <t t-out="teacher_mail"/>
+
+
+    </p>
+
+</div>
+
+
+
+
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

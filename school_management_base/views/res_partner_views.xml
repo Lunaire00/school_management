@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_inherit" model="ir.ui.view">
+            <field name="name">view.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_type']" position="after">
+                    <field name="role_type" invisible="True" />
+                </xpath>
+                <xpath expr="//field[@name='company_type']" position="before">
+                    <div>
+                        <field name="role_id" widget="radio" options="{'horizontal': true}" />
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='company_type']" position="attributes">
+                    <attribute name="invisible">role_type != 'others'</attribute>
+                </xpath>
+                <xpath expr="//field[@name='vat']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='vat']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='function']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='lang']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="student_class_id" invisible="role_type != 'student'" />
+                    <field name="option" invisible="role_type!= 'student'" />
+                    <field name="current_titular_name" readonly="1"
+                        invisible="role_type != 'student'" />
+                    <field name="is_titular" invisible="role_type != 'teacher'" />
+                    <field name="titular_class_names" invisible="not is_titular" />
+                </xpath>
+                <xpath expr="//page[@name='contact_addresses']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//page[@name='contact_addresses']" position="after">
+                    <page name='student_program' string="Program" invisible="role_type != 'student'"
+                        autofocus="autofocus">
+                        <group>
+                            <field name="course_ids" widget="many2many" string="" />
+                        </group>
+                    </page>
+                    <page name="reference_contact" string="Reference Contacts"
+                        invisible="role_type != 'student'">
+                        <field name="partner_ids">
+                            <tree>
+                                <field name="display_name" string="Name" />
+                                <field name="phone" />
+                                <field name="mobile" />
+                                <field name="email" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//page[@name='contact_addresses']" position="after">
+                    <page name='teacher_course' string="Course"
+                        invisible="role_type != 'teacher' and role_type != 'titular'"></page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_res_partner_filter_inherit" model="ir.ui.view">
+            <field name="name">view.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='group_country']" position="after">
+                    <filter name='group_role_type' string="Role Type"
+                        context="{'group_by': 'role_id'}" />
+                </xpath>
+                <xpath expr="//filter[@name='type_company']" position="after">
+                    <separator />
+                    <filter name='role_type_student' string="Students"
+                        domain="[('role_id.name', 'ilike', 'Student')]" />
+                    <filter name='role_type_teacher' string="Teachers"
+                        domain="[('role_id.name', 'ilike', 'Teacher')]" />
+                    <filter name='role_type_direction' string="Secretariat/Direction"
+                        domain="[('role_id.name', 'ilike', 'Secretariat/Direction')]" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_school_students" model="ir.actions.act_window">
+            <field name="name">Students</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('role_type', '=', 'student')]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No student found. Let's create one !
+                </p>
+            </field>
+        </record>
+
+        <record id="action_school_teachers" model="ir.actions.act_window">
+            <field name="name">Teachers</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('role_type', '=', 'teacher')]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No teacher found. Let's create one !
+                </p>
+            </field>
+        </record>
+
+        <record id="school_direction_option" model="ir.actions.act_window">
+            <field name="name">Secretariat/Direction</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('role_type', '=', 'direction')]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Direction found. Let's create one !
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Students"
+            id="school_students_option"
+            action="action_school_students"
+            groups="base.group_user"
+            sequence="1"
+            parent="school_life_menu" />
+
+        <menuitem name="Teachers"
+            id="school_teachers_option"
+            action="action_school_teachers"
+            groups="base.group_user"
+            sequence="2"
+            parent="school_life_menu" />
+
+        <menuitem name="Secretariat/Director"
+            id="school_director_option"
+            action="school_direction_option"
+            groups="base.group_user"
+            sequence="3"
+            parent="school_life_menu" />
+    </data>
+</odoo>

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_absences_manager,absences_manager,model_absences,base.group_user,1,1,1,1
+school_diary.access_absence_type,access_absence_type,school_diary.model_absence_type,base.group_user,1,1,1,1
+school_diary.access_comment_type,access_comment_type,school_diary.model_comment_type,base.group_user,1,1,1,1
+school_diary.access_period_week_type,access_period_week_type,school_diary.model_period_week_type,base.group_user,1,1,1,1
+school_diary.access_comment,access_comment,school_diary.model_comment,base.group_user,1,1,1,1

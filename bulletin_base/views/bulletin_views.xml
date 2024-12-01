@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="bulletin_tree">
+            <field name="name">Bulletin list</field>
+            <field name="model">bulletin</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="student_image" widget="image" class="student-image-column"/>
+                    <field name="student_id" />
+                    <field name="class_id" />
+                    <field name="course_ids" widget="many2many_tags" string="Courses" options="{'no_create': True, 'no_create_edit':True}"/>
+                    <field name="period_id"/>
+                    <field name="year_id"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="bulletin_view_form" model="ir.ui.view">
+            <field name="name">bulletin.form</field>
+            <field name="model">bulletin</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" style="font-size:24pt;"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="student_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                            </group>
+                            <group>
+                                <field name="student_image" widget="image" class="oe_avatar" string=""/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="class_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                            <field name="period_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                            <field name="year_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                            <field name="type" options="{'no_create': True, 'no_create_edit':True}"/>
+                            <field name="end_of_year_bulletin_id" />
+                        </group>
+
+                        <notebook>
+                            <!-- <page name="bulletin_line" string="Details">
+                                <field name="course_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="teacher_id"/>
+                                        <field name="hours"/>
+                                        <field name="degree_id"/>
+                                        <field name="rel_academy_level"/>
+                                    </tree>
+                                </field>
+                            </page> -->
+
+                            <page name="bulletin_line" string="Details">
+                                <field name="line_ids">
+                                    <tree editable="bottom">
+                                        <field name="course_id"/>
+                                        <field name="teacher_id"/>
+                                        <field name="grade"/>
+<!--                                        <field name="student_id"/>-->
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <p align='right'>
+                            <span> <b> Average Grade: <field name='average_note'/>/100 </b></span>
+                        </p>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="bulletin_smart_button" model="ir.ui.view">
+            <field name="name">Bulletin Smart Button</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <div class="oe_button_box" position="inside">
+                    <button type="object" class="oe_stat_button" id="bulletin_ids_button"
+                            icon="fa-clock-o" name="action_res_bulletin_button"
+                            invisible="not bulletin_ids "> <!-- invisible="attendance_count == 0" -->
+                        <field name="bulletin_ids" widget="statinfo" string="Bulletins"/>
+                    </button>
+                </div>
+            </field>
+        </record>
+
+
+        <record id="bulletin_action" model="ir.actions.act_window">
+            <field name="name">Bulletin</field>
+            <field name="res_model">bulletin</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="bulletin_menu_root" name="Gestion Bulletin" web_icon="bulletin_base,static/description/icon.png"/>
+        <menuitem id="bulletin_button" name="Bulletin" parent="bulletin_menu_root" groups="base.group_user" sequence="1"
+                  action="bulletin_action"/>
+        <menuitem id="academic_root" name="Configuration" sequence="3" parent="bulletin_menu_root"/>
+
+    </data>
+</odoo>

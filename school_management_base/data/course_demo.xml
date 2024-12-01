@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--MATH-->
+        <record id="school_base_course_math_01_demo" model="school.course">
+            <field name="name">Math</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_2"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_01')])]"/>
+            <field name="hours">2</field>
+            <field name="degree_id" ref="school_degre_config_01"/>
+        </record>
+        <record id="school_base_course_math_02_demo" model="school.course">
+            <field name="name">Math</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_2"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_01')])]"/>
+            <field name="hours">4</field>
+            <field name="degree_id" ref="school_degre_config_02"/>
+        </record>
+        <record id="school_base_course_math_03_demo" model="school.course">
+            <field name="name">Math</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_2"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_01')])]"/>
+            <field name="hours">6</field>
+            <field name="degree_id" ref="school_degre_config_03"/>
+        </record>
+        <record id="school_base_course_math_04_demo" model="school.course">
+            <field name="name">Math</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_2"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_01')])]"/>
+            <field name="hours">8</field>
+            <field name="degree_id" ref="school_degre_config_04"/>
+        </record>
+        <record id="school_base_course_math_05_demo" model="school.course">
+            <field name="name">Math</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_2"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_01')])]"/>
+            <field name="hours">8</field>
+            <field name="degree_id" ref="school_degre_config_05"/>
+        </record>
+        <record id="school_base_course_math_06_demo" model="school.course">
+            <field name="name">Math</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_2"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_01')])]"/>
+            <field name="hours">8</field>
+            <field name="degree_id" ref="school_degre_config_06"/>
+        </record>
+        <!--FRENCH-->
+        <record id="school_base_course_french_01_demo" model="school.course">
+            <field name="name">French</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_1"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_02')])]"/>
+            <field name="hours">2</field>
+            <field name="degree_id" ref="school_degre_config_01"/>
+        </record>
+        <record id="school_base_course_french_02_demo" model="school.course">
+            <field name="name">French</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_1"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_01')])]"/>
+            <field name="hours">2</field>
+            <field name="degree_id" ref="school_degre_config_02"/>
+        </record>
+        <record id="school_base_course_french_03_demo" model="school.course">
+            <field name="name">French</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_1"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_02')])]"/>
+            <field name="hours">2</field>
+            <field name="degree_id" ref="school_degre_config_03"/>
+        </record>
+        <record id="school_base_course_french_04_demo" model="school.course">
+            <field name="name">French</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_1"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_01')])]"/>
+            <field name="hours">2</field>
+            <field name="degree_id" ref="school_degre_config_04"/>
+        </record>
+        <record id="school_base_course_french_05_demo" model="school.course">
+            <field name="name">French</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_1"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_02')])]"/>
+            <field name="hours">2</field>
+            <field name="degree_id" ref="school_degre_config_05"/>
+        </record>
+        <record id="school_base_course_french_06_demo" model="school.course">
+            <field name="name">French</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_1"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_01')])]"/>
+            <field name="hours">2</field>
+            <field name="degree_id" ref="school_degre_config_06"/>
+        </record>
+        <!--Sport-->
+        <record id="school_base_course_sport_01_demo" model="school.course">
+            <field name="name">Sport</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_3"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_03')])]"/>
+            <field name="hours">2</field>
+            <field name="degree_id" ref="school_degre_config_03"/>
+        </record>
+        <record id="school_base_course_sport_02_demo" model="school.course">
+            <field name="name">Sport</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_3"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_03')])]"/>
+            <field name="hours">6</field>
+            <field name="degree_id" ref="school_degre_config_04"/>
+        </record>
+        <record id="school_base_course_sport_03_demo" model="school.course">
+            <field name="name">Sport</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_3"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_03')])]"/>
+            <field name="hours">6</field>
+            <field name="degree_id" ref="school_degre_config_05"/>
+        </record>
+        <record id="school_base_course_sport_04_demo" model="school.course">
+            <field name="name">Sport</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_3"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_03')])]"/>
+            <field name="hours">6</field>
+            <field name="degree_id" ref="school_degre_config_06"/>
+        </record>
+
+        <!--Science-->
+
+        <record id="school_base_course_science_01_demo" model="school.course">
+            <field name="name">Science</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_4"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_01')])]"/>
+            <field name="hours">12</field>
+            <field name="degree_id" ref="school_degre_config_04"/>
+        </record>
+        <record id="school_base_course_science_02_demo" model="school.course">
+            <field name="name">Science</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_4"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_01')])]"/>
+            <field name="hours">12</field>
+            <field name="degree_id" ref="school_degre_config_05"/>
+        </record>
+        <record id="school_base_course_science_03_demo" model="school.course">
+            <field name="name">Science</field>
+            <field name="teacher_id" ref="res_partner_school_teacher_4"/>
+            <field name="type_ids" eval="[(6, 0, [ref('school_course_config_01')])]"/>
+            <field name="hours">12</field>
+            <field name="degree_id" ref="school_degre_config_06"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- View school.class View Tree -->
+        <record id="view_school_class_tree" model="ir.ui.view">
+            <field name="name">view.school.class.tree</field>
+            <field name="model">school.class</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="titular_id" />
+                    <field name="student_count" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- View school.class form with Notebook -->
+        <record id="view_school_class_form" model="ir.ui.view">
+            <field name="name">view.school.class.form</field>
+            <field name="model">school.class</field>
+            <field name="arch" type="xml">
+                <form string="School Class">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" />
+                            <h1>
+                                <field name="name" placeholder="Class Name..." />
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="titular_id" />
+                            <field name="student_count" readonly="1" />
+                        </group>
+                        <notebook>
+                            <page string="Students">
+                                <field name="student_ids">
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- View school.class search -->
+        <record id="view_school_class_search" model="ir.ui.view">
+            <field name="name">view.school.class.search</field>
+            <field name="model">school.class</field>
+            <field name="arch" type="xml">
+                <search>
+                    <group expand="1" string="Group By">
+                        <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action school.class -->
+        <record id="action_school_class" model="ir.actions.act_window">
+            <field name="name">School Class</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">school.class</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no example, click here to add a new School Class.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_school_class" model="ir.actions.act_window">
+            <field name="name">Classes</field>
+            <field name="res_model">school.class</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new class.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_school_class"
+            name="Classes"
+            action="action_school_class"
+            sequence="3"
+            parent="school_menu_root" />
+    </data>
+</odoo>

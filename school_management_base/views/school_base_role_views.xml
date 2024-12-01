@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="school_base_role_view_tree" model="ir.ui.view">
+            <field name="name">school base role</field>
+            <field name="model">school.base.role</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="action_school_role" model="ir.actions.act_window">
+        <field name="name">Roles</field>
+        <field name="res_model">school.base.role</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No role found. Let's create one !
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="school_role_options"
+              name="Roles"
+              action="action_school_role"
+              groups="base.group_user"
+              sequence="1"
+              parent="school_config_menu"/>
+
+    </data>
+</odoo>

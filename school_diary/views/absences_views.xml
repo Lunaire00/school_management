@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View absences View Tree -->
+    <record id="view_absences_tree" model="ir.ui.view">
+        <field name="name">view.absences.tree</field>
+        <field name="model">absences</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_class_id" />
+                <field name="student_id"></field>
+                <field name="teacher_who_noted_absence_id" />
+                <field name="day_of_absence" />
+                <field name="time_of_absence" />
+                <field name="absence_type_id" />
+                <field name="rel_is_justified"
+                    widget="boolean_toggle"
+                />
+                <field name="is_confirm" widget="boolean_toggle"
+                    readonly="1"
+                />
+            </tree>
+        </field>
+    </record>
+
+    <!-- View absences form -->
+    <record id="view_absences_form" model="ir.ui.view">
+        <field name="name">view.absences.form</field>
+        <field name="model">absences</field>
+        <field name="arch" type="xml">
+            <form string="Absences">
+                <header>
+                    <button string="Send mail" name="action_send_mail_to_parents" type="object"
+                        class="oe_highlight" />
+                </header>
+                <sheet>
+                    <group>
+                        <field name="student_class_id" />
+                        <field name="student_id"></field>
+                        <field name="teacher_who_noted_absence_id" />
+                        <field name="day_of_absence" />
+                        <field name="time_of_absence" />
+                        <field name="absence_type_id" />
+                        <field name="is_confirm" widget="boolean_toggle" />
+
+
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- View absences search -->
+    <record id="view_absences_search" model="ir.ui.view">
+        <field name="name">view.absences.search</field>
+        <field name="model">absences</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+                </group> -->
+            </search>
+        </field>
+    </record>
+
+    <!-- Action absences -->
+    <record id="action_absences" model="ir.actions.act_window">
+        <field name="name">Absences</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">absences</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Absences.
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Ajouter des enregistrements dans le modèle qui utilise les champs -->
+    <record id="student_comment_1" model="comment">
+        <field name="student_class" />
+        <field name="student_id" />
+        <field name="teacher_id" />
+        <field name="type_comment_id" ref="chat_data" />
+        <field name="is_confirm">True</field>
+    </record>
+    <record id="student_comment_2" model="comment">
+        <field name="student_class" />
+        <field name="student_id" />
+        <field name="teacher_id" />
+        <field name="type_comment_id" ref="verbal_violence_data" />
+        <field name="is_confirm">False</field>
+    </record>
+</odoo>

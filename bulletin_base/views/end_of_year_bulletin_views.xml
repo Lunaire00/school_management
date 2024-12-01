@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="end_bulletin_tree">
+            <field name="name">end.bulletin.tree</field>
+            <field name="model">end.bulletin</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="bulletin_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="end_bulletin_view_form" model="ir.ui.view">
+            <field name="name">end.bulletin.form</field>
+            <field name="model">end.bulletin</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="bulletin_ids"/>
+                        </group>
+
+                        <notebook>
+                            <page name="end_bulletin_line" string="Details">
+<!--                                <field name="note_ids">-->
+<!--                                    <tree editable="bottom">-->
+<!--                                        <field name="course_id"/>-->
+
+<!--                                        <field name="note_id"/>-->
+<!--                                        <field name="number_of_hours"/>-->
+<!--                                    </tree>-->
+<!--                                </field>-->
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="end_bulletin_action" model="ir.actions.act_window">
+            <field name="name">End of Year Bulletin</field>
+            <field name="res_model">end.bulletin</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="end_bulletin_button" name="End of Year Bulletin"
+                  groups="base.group_user" action="end_bulletin_action"
+                  sequence="2"
+                  parent="bulletin_menu_root"/>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record id="school_base_degre_config_tree" model="ir.ui.view">
+            <field name="name">school.base.degre.config.tree</field>
+            <field name="model">school.base.degre.config</field>
+            <field name="arch" type="xml">
+                <tree string="Degre Configuration" editable="bottom">
+                    <field name="name"/>
+                    <field name="academy_level"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_school_base_degre_config" model="ir.actions.act_window">
+            <field name="name">Degre config</field>
+            <field name="res_model">school.base.degre.config</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No degre configuration found. Let's create one !
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="school_base_degre_config_option"
+                  name="Degre configuration"
+                  action="action_school_base_degre_config"
+                  sequence="1"
+                  parent="school_config_menu" />
+    </data>
+</odoo>

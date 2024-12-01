@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record id="school_base_course_config_tree" model="ir.ui.view">
+            <field name="name">school.base.course.config.tree</field>
+            <field name="model">school.base.course.config</field>
+            <field name="arch" type="xml">
+                <tree string="Course Configuration" editable="bottom">
+                    <field name="name"/>
+                    <field name="color" widget="color_picker"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_school_base_course_config" model="ir.actions.act_window">
+            <field name="name">Course config</field>
+            <field name="res_model">school.base.course.config</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No course configuration found. Let's create one !
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="school_base_course_config_option"
+                  name="Course configuration"
+                  action="action_school_base_course_config"
+                  sequence="2"
+                  parent="school_config_menu" />
+    </data>
+</odoo>

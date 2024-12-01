@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="school_degre_config_01" model="school.base.degre.config">
+        <field name="name">First primary degre</field>
+        <field name="academy_level">primary</field>
+    </record>
+    <record id="school_degre_config_02" model="school.base.degre.config">
+        <field name="name">Second primary degre</field>
+        <field name="academy_level">primary</field>
+    </record>
+    <record id="school_degre_config_03" model="school.base.degre.config">
+        <field name="name">Third primary degre</field>
+        <field name="academy_level">primary</field>
+    </record>
+    <record id="school_degre_config_04" model="school.base.degre.config">
+        <field name="name">First secondary degre</field>
+        <field name="academy_level">secondary</field>
+    </record>
+    <record id="school_degre_config_05" model="school.base.degre.config">
+        <field name="name">Second secondary degre</field>
+        <field name="academy_level">secondary</field>
+    </record>
+    <record id="school_degre_config_06" model="school.base.degre.config">
+        <field name="name">Third secondary degre</field>
+        <field name="academy_level">secondary</field>
+    </record>
+</odoo>

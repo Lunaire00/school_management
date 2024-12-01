@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <record id="monday_8_pm" model="period.week.type">
+            <field name="week_day">monday</field>
+            <field name="start_time">8.5</field>
+            <field name="end_time">9.0</field>
+            <field name="is_rest">False</field>
+        </record>
+        <record id="wednesday_10_pm" model="period.week.type">
+            <field name="week_day">wednesday</field>
+            <field name="start_time">10.75</field>
+            <field name="end_time">11.0</field>
+            <field name="is_rest">True</field>
+        </record>
+        <record id="friday_16_pm" model="period.week.type">
+            <field name="week_day">friday</field>
+            <field name="start_time">16.166</field>
+            <field name="end_time">17.0</field>
+            <field name="is_rest">False</field>
+        </record>
+        <record id="thursday_lunch_pause" model="period.week.type">
+            <field name="week_day">thursday</field>
+            <field name="start_time">11.83</field>
+            <field name="end_time">12.666</field>
+            <field name="is_rest">True</field>
+        </record>
+    </data>
+</odoo>

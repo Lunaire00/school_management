@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="school_diary.list">
+      <field name="name">school_diary list</field>
+      <field name="model">school_diary.school_diary</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="school_diary.action_window">
+      <field name="name">school_diary window</field>
+      <field name="res_model">school_diary.school_diary</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="school_diary.action_server">
+      <field name="name">school_diary server</field>
+      <field name="model_id" ref="model_school_diary_school_diary"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="school_diary" id="school_diary.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="school_diary.menu_1" parent="school_diary.menu_root"/>
+    <menuitem name="Menu 2" id="school_diary.menu_2" parent="school_diary.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="school_diary.menu_1_list" parent="school_diary.menu_1"
+              action="school_diary.action_window"/>
+    <menuitem name="Server to list" id="school_diary" parent="school_diary.menu_2"
+              action="school_diary.action_server"/>
+-->
+  </data>
+</odoo>

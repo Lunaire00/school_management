@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bulletin,bulletin.bulletin,bulletin_base.model_bulletin,base.group_user,1,1,1,1
+
+bulletin_base.access_period,access_period,bulletin_base.model_period,base.group_user,1,1,1,1
+
+access_academic_year,academic.year.access,bulletin_base.model_academic_year,base.group_user,1,1,1,1
+
+bulletin_base.access_bulletin_line,access_bulletin_line,bulletin_base.model_bulletin_line,base.group_user,1,1,1,1
+
+bulletin_base.access_end_bulletin,access_end_bulletin,bulletin_base.model_end_bulletin,base.group_user,1,1,1,1
+
+

@@ -1,0 +1,116 @@
+<odoo>
+    <data>
+
+        <record id="view_course_kanban" model="ir.ui.view">
+            <field name="name">school.course.kanban</field>
+            <field name="model">school.course</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" sample="1">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <strong>
+                                            <field name="name"/>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <t t-if="record.teacher_id.value">
+                                    <hr class="mt8 mb8"/>
+                                    <field name="teacher_id"/>
+                                </t>
+                                <div>
+                                    <field name="image" widget="image" style="width: 75px; height: 75px;"/>
+                                </div>
+                                <div>
+                                    <t>
+                                        <field name="type_ids" widget="many2many_tags"
+                                               options="{'color_field': 'color'}"/>
+                                    </t>
+                                </div>
+                                <div>
+                                    <t>
+                                        <field name="degree_id"/>
+                                    </t>
+                                </div>
+                                <div>
+                                    <t>
+                                        <field name="rel_academy_level"/>
+                                    </t>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_course_tree" model="ir.ui.view">
+            <field name="name">school.course.tree</field>
+            <field name="model">school.course</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="teacher_id"/>
+                    <field name="type_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                    <field name="hours"/>
+                    <field name="degree_id"/>
+                    <field name="rel_academy_level"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_course_form" model="ir.ui.view">
+            <field name="name">school.course.form</field>
+            <field name="model">school.course</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="teacher_id"/>
+                                <field name="type_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                <field name="hours"/>
+                                <field name="degree_id"/>
+                                <field name="rel_academy_level" widget="many2one_tags"
+                                       options="{'color_field': 'color'}"/>
+                            </group>
+                            <group>
+                                <field name="image" widget="image" style="width: 75px; height: 75px;"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"
+                               options="{'post_refresh': 'recipients'}"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="course_search_view" model="ir.ui.view">
+            <field name="name">Course.search</field>
+            <field name="model">school.course</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="teacher_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_course" model="ir.actions.act_window">
+            <field name="name">Course</field>
+            <field name="res_model">school.course</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <menuitem id="school_course_id" name="Course" sequence="4" action="action_course"
+                  parent="school_menu_root"/>
+    </data>
+</odoo>

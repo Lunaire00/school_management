@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_period_bulletin_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <h2>Bulletin: <span t-field="o.name"/></h2>
+                <p>Student: <span t-field="o.student_id.name"/></p>
+                <p>Class: <span t-field='o.class_id'/> </p>
+                <p>Period: <span t-field='o.period_id.name'/> </p>
+
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Hours</th>
+                            <th>Grade</th>
+                            <th>Appreciation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="docs.line_ids" t-as="line">
+                            <td><span t-field="line.course_id.name"/> 
+                                <br></br>
+                                <span class='teacher_name' t-field="line.course_id.teacher_id.name"/>
+                            </td>
+                            <td><span t-field="line.course_id.hours"/></td>
+                            <td><span t-field="line.grade"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><b>Average Grade : <span t-field="line.average_score">/100</span></b></p>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_print_bulletin" model="ir.actions.report">
+        <field name="name">Period Bulletin</field>
+        <field name="model">bulletin</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">bulletin_base.report_period_bulletin_template</field>
+        <field name="print_report_name">'%s' % (object.name)</field>
+        <field name="binding_model_id" ref='bulletin_base.model_bulletin'/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+</odoo>

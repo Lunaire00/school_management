@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_school_student_1" model="res.partner">
+            <field name="name">Demo Student 1</field>
+            <field name="role_type">student</field>
+            <field name="role_id" ref="res_partner_role_0"/>
+            <field name="is_company">0</field>
+            <field name="street">demo street</field>
+            <field name="city">Democity</field>
+            <field name="zip">111</field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="email">demo.student1@example.com</field>
+            <field name="image_1920" type="base64" file="school_management_base/static/img/demo_res_partner/students/student1.png"/>
+            <field name="mobile">(+32)-111-11-11-11</field>
+        </record>
+
+        <record id="res_partner_school_student_2" model="res.partner">
+            <field name="name">Demo Student 2</field>
+            <field name="role_id" ref="res_partner_role_0"/>
+            <field name="role_type">student</field>
+            <field name="is_company">0</field>
+            <field name="street">demo street 2</field>
+            <field name="city">Democity 2</field>
+            <field name="zip">222</field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="email">demo.student2@example.com</field>
+            <field name="image_1920" type="base64" file="school_management_base/static/img/demo_res_partner/students/student2.png"/>
+            <field name="mobile">(+32)-222-22-22-22</field>
+        </record>
+
+        <record id="res_partner_school_student_3" model="res.partner">
+            <field name="name">Demo Student 3</field>
+            <field name="role_id" ref="res_partner_role_0"/>
+            <field name="role_type">student</field>
+            <field name="is_company">0</field>
+            <field name="street">demo street 3</field>
+            <field name="city">Democity 3</field>
+            <field name="zip">333</field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="email">demo.student3@example.com</field>
+            <field name="image_1920" type="base64" file="school_management_base/static/img/demo_res_partner/students/student3.png"/>
+            <field name="mobile">(+32)-333-33-33-33</field>
+        </record>
+
+        <record id="res_partner_school_student_4" model="res.partner">
+            <field name="name">Demo Student 4</field>
+            <field name="role_id" ref="res_partner_role_0"/>
+            <field name="role_type">student</field>
+            <field name="is_company">0</field>
+            <field name="street">demo street 4</field>
+            <field name="city">Democity 4</field>
+            <field name="zip">4444</field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="email">demo.student4@example.com</field>
+            <field name="image_1920" type="base64" file="school_management_base/static/img/demo_res_partner/students/student4.png"/>
+            <field name="mobile">(+32)-444-44-44-44</field>
+        </record>
+
+        <record id="res_partner_school_teacher_1" model="res.partner">
+            <field name="name">Demo Teacher 1</field>
+            <field name="role_id" ref="res_partner_role_1"/>
+            <field name="role_type">teacher</field>
+            <field name="is_company">0</field>
+            <field name="street">demo street 5</field>
+            <field name="city">Democity 5</field>
+            <field name="zip">5555</field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="email">demo.teacher1@example.com</field>
+            <field name="image_1920" type="base64" file="school_management_base/static/img/demo_res_partner/teachers/teacher1.png"/>
+            <field name="mobile">(+32)-555-55-55-55</field>
+        </record>
+
+        <record id="res_partner_school_teacher_2" model="res.partner">
+            <field name="name">Demo Teacher 2</field>
+            <field name="role_id" ref="res_partner_role_1"/>
+            <field name="role_type">teacher</field>
+            <field name="is_company">0</field>
+            <field name="street">demo street 5</field>
+            <field name="city">Democity 6</field>
+            <field name="zip">6666</field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="email">demo.teacher2@example.com</field>
+            <field name="image_1920" type="base64" file="school_management_base/static/img/demo_res_partner/teachers/teacher2.png"/>
+            <field name="mobile">(+32)-666-66-66-66</field>
+        </record>
+
+        <record id="res_partner_school_teacher_3" model="res.partner">
+            <field name="name">Demo Teacher 3</field>
+            <field name="role_id" ref="res_partner_role_1"/>
+            <field name="role_type">teacher</field>
+            <field name="is_company">0</field>
+            <field name="street">demo street 7</field>
+            <field name="city">Democity 7</field>
+            <field name="zip">5555</field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="email">demo.teacher3@example.com</field>
+            <field name="image_1920" type="base64" file="school_management_base/static/img/demo_res_partner/teachers/teacher3.png"/>
+            <field name="mobile">(+32)-777-77-77-77</field>
+        </record>
+
+        <record id="res_partner_school_teacher_4" model="res.partner">
+            <field name="name">Demo Teacher 4</field>
+            <field name="role_id" ref="res_partner_role_1"/>
+            <field name="role_type">teacher</field>
+            <field name="is_company">0</field>
+            <field name="street">demo street 8</field>
+            <field name="city">Democity 8</field>
+            <field name="zip">8888</field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="email">demo.teacher4@example.com</field>
+            <field name="image_1920" type="base64" file="school_management_base/static/img/demo_res_partner/teachers/teacher4.png"/>
+            <field name="mobile">(+32)-888-88-88-88</field>
+        </record>
+
+        <record id="res_partner_school_Parent_1" model="res.partner">
+            <field name="name">Demo Parent 1</field>
+            <field name="role_id" ref="res_partner_role_3"/>
+            <field name="is_company">0</field>
+            <field name="street">demo street 9</field>
+            <field name="city">Democity 9</field>
+            <field name="zip">9999</field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="email">demo.parent1@example.com</field>
+            <field name="image_1920" type="base64" file="school_management_base/static/img/demo_res_partner/parents/parent1.png"/>
+            <field name="mobile">(+32)-999-99-99-99</field>
+        </record>
+
+        <record id="res_partner_school_Parent_2" model="res.partner">
+            <field name="name">Demo Parent 2</field>
+            <field name="role_id" ref="res_partner_role_3"/>
+            <field name="is_company">0</field>
+            <field name="street">demo street 10</field>
+            <field name="city">Democity 10</field>
+            <field name="zip">1010</field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="email">demo.parent2@example.com</field>
+            <field name="image_1920" type="base64" file="school_management_base/static/img/demo_res_partner/parents/parent2.png"/>
+            <field name="mobile">(+32)-1010-10-10-10</field>
+        </record>
+
+        <record id="res_partner_school_direction_1" model="res.partner">
+            <field name="name">Demo Direction 1</field>
+            <field name="role_id" ref="res_partner_role_2"/>
+            <field name="role_type">direction</field>
+            <field name="is_company">0</field>
+            <field name="street">demo street 11</field>
+            <field name="city">Democity 11</field>
+            <field name="zip">1111</field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="email">demo.direction1@example.com</field>
+            <field name="image_1920" type="base64" file="school_management_base/static/img/demo_res_partner/direction/direction1.png"/>
+            <field name="mobile">(+32)-1111-11-11-11</field>
+        </record>
+    </data>
+</odoo>

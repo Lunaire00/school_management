@@ -1,0 +1,81 @@
+<odoo>
+    <data>
+        <!-- View school.base.program Tree -->
+        <record id="school_base_program_view_tree" model="ir.ui.view">
+            <field name="name">school.base.program.view.tree</field>
+            <field name="model">school.base.program</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="total_hours" optional="show"/>
+                    <field name="cours_ids" widget="many2many_tags" optional="hide"/>
+                    <field name="degre_ids" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action program smart button -->
+        <record id="action_open_students_on_program" model="ir.actions.act_window">
+            <field name="name">Students</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('option', '=', context.get('active_id'))]</field>
+            <field name="target">current</field>
+        </record>
+
+        <!-- View school.base.program Form -->
+        <record id="school_base_program_view_form" model="ir.ui.view">
+            <field name="name">school.base.program.view.form</field>
+            <field name="model">school.base.program</field>
+            <field name="arch" type="xml">
+                <form string="School program">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button"
+                                name="%(action_open_students_on_program)d"
+                                icon="fa-user"
+                                type="action"
+                                invisible="not student_ids"
+                                context="{'search_default_categ_id': id, 'default_categ_id': id, 'group_expand': True}">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value"><field name="student_ids" widget="statinfo"/></span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Name..."/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="degre_ids"/> 
+                            <field name="cours_ids" widget="many2many_tags" domain="cours_ids_domain"/>
+                            <field name="total_hours"/>
+                            <field name="cours_ids_domain" invisible="True"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action school.base.program -->
+        <record id="action_school_base_program" model="ir.actions.act_window">
+            <field name="name">Program</field>
+            <field name="res_model">school.base.program</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Try to create a new program.
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu school.base.program -->
+        <menuitem id="menu_school_base_program" 
+              name="Program"  
+              action="action_school_base_program"
+              sequence="5"
+              parent="school_menu_root"/>
+    </data>
+</odoo>

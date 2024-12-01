@@ -1,0 +1,8 @@
+.o_list_view .student-image-column {
+    width: 100%;
+    max-width: 30px;
+    padding: 0;
+    height: auto;      /* Conserve le ratio d'aspect de l'image */
+    object-fit: cover;
+}
+

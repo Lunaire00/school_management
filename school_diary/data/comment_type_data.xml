@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="chat_data" model="comment.type">
+            <field name="name">Chat</field>
+            <field name="gravity_level">1</field>
+        </record>
+        <record id="repeated_delay_data" model="comment.type">
+            <field name="name">Repeated delay</field>
+            <field name="gravity_level">3</field>
+        </record>
+        <record id="offensive_language_data" model="comment.type">
+            <field name="name">Offensive language</field>
+            <field name="gravity_level">5</field>
+        </record>
+        <record id="verbal_violence_data" model="comment.type">
+            <field name="name">Verbal violence</field>
+            <field name="gravity_level">8</field>
+        </record>
+        <record id="physical_violence_data" model="comment.type">
+            <field name="name">Physical violence</field>
+            <field name="gravity_level">10</field>
+        </record>
+    </data>
+</odoo>

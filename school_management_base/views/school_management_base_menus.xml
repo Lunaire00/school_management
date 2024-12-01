@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem name="My School"
+        id="school_menu_root"
+        web_icon="school_management_base,static/description/icon.png"
+        groups="base.group_user"
+        sequence="1" />
+
+    <menuitem name="School Life"
+        id="school_life_menu"
+        groups="base.group_user"
+        sequence="1"
+        parent="school_menu_root" />
+
+    <menuitem id="school_config_menu"
+        name="Configuration"
+        sequence="10"
+        parent="school_menu_root" />
+</odoo>

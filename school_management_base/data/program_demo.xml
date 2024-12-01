@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Science-->
+        <record id="school_base_program_math_01_demo" model="school.base.program">
+            <field name="name">Science</field>
+            <field name="degre_ids" ref="school_degre_config_06"/>
+            <field name="cours_ids" eval="[(6, 0, [ref('school_base_course_science_03_demo'),
+                                                    ref('school_base_course_french_06_demo'),
+                                                    ref('school_base_course_math_06_demo'),
+                                                    ref('school_base_course_sport_04_demo')])]"/>
+        </record>
+        <!-- Primary-->
+        <record id="school_base_program_primary_01_demo" model="school.base.program">
+            <field name="name">Primay base</field>
+            <field name="degre_ids" ref="school_degre_config_01"/>
+            <field name="cours_ids" eval="[(6, 0, [ref('school_base_course_math_01_demo'),
+                                                    ref('school_base_course_french_01_demo'),])]"/>
+        </record>
+        <!-- Secondary-->
+        <record id="school_base_program_secondary_01_demo" model="school.base.program">
+            <field name="name">Secondary base</field>
+            <field name="degre_ids" ref="school_degre_config_04"/>
+            <field name="cours_ids" eval="[(6, 0, [ref('school_base_course_math_04_demo'),
+                                                    ref('school_base_course_french_04_demo'),
+                                                    ref('school_base_course_sport_02_demo'),])]"/>
+        </record>
+    </data>
+</odoo>

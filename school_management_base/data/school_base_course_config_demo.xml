@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="school_course_config_01" model="school.base.course.config">
+        <field name="name">Option</field>
+        <field name="color">1</field>
+    </record>
+    <record id="school_course_config_02" model="school.base.course.config">
+        <field name="name">General</field>
+        <field name="color">2</field>
+    </record>
+    <record id="school_course_config_03" model="school.base.course.config">
+        <field name="name">Complementary</field>
+        <field name="color">3</field>
+    </record>
+</odoo>

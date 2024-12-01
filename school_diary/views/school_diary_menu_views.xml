@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <!-- App menu -->
+        <menuitem name="School diary" id="shcool_diary_root"
+            sequence="3"
+            web_icon="school_diary,static\description\icon.png"
+            action="action_absences" />
+
+        <!-- Absence menu -->
+        <menuitem id="absence_root"
+            name="Absence"
+            parent="shcool_diary_root"
+            action="action_absences"
+            sequence="1" />
+
+        <!-- Config menu -->
+
+        <menuitem id="school_diary_config_root"
+            name="Configuration"
+            parent="shcool_diary_root"
+            sequence="3" />
+
+        <!-- Absence type menu -->
+        <menuitem id="absence_type_config_root"
+            name="Absence Type"
+            parent="school_diary_config_root"
+            action="action_absence_type"
+            sequence="1" />
+
+        <!-- Comment type menu -->
+        <menuitem id="comment_type_config_root"
+            name="Comment Type"
+            parent="school_diary_config_root"
+            action="action_comment_type"
+            sequence="2" />
+
+        <!-- period week type menu -->
+        <menuitem id="period_week_type_config_root"
+            name="Period week Type"
+            parent="school_diary_config_root"
+            action="action_period_week_type"
+            sequence="3" />
+
+    </data>
+</odoo>

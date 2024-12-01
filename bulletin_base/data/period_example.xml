@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate='1'>
+        <record id='period_1' model='period'>
+            <field name='name'>Summer</field>
+            <field name='beginning_date'>2025-05-01</field>
+            <field name='ending_date'>2025-06-30</field>
+            <field name='year_id' ref='year_2'></field>
+            <field name='is_certif' eval='False'/>
+            <field name='period_weight'>0</field>
+        </record>
+        <record id='period_2' model='period'>
+            <field name='name'>Winter</field>
+            <field name='beginning_date'>2025-11-01</field>
+            <field name='year_id' ref='year_3'></field>
+            <field name='ending_date'>2026-03-25</field>
+            <field name='is_certif' eval='True'/>
+            <field name='period_weight'>20</field>
+        </record>
+        <record id='period_3' model='period'>
+            <field name='name'>Spring</field>
+            <field name='year_id' ref='year_3'></field>
+            <field name='is_certif' eval='True'/>
+            <field name='beginning_date'>2026-04-01</field>
+            <field name='ending_date'>2026-06-30</field>
+            <field name='period_weight'>30</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <!--period week type view tree-->
+        <record id="period_week_type_views" model="ir.ui.view">
+            <field name="name">period.week.type.tree</field>
+            <field name="model">period.week.type</field>
+            <field name="arch" type="xml">
+                <tree string="Period week Type" editable="bottom">
+                    <field name="week_day" />
+                    <field name="start_time" widget="float_time" />
+                    <field name="end_time" widget="float_time" />
+                    <field name="is_rest" />
+                </tree>
+            </field>
+        </record>
+        <!--period
+        week type action-->
+        <record model="ir.actions.act_window" id="action_period_week_type">
+            <field name="name">Period week type</field>
+            <field name="res_model">period.week.type</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>

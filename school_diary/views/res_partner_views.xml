@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- Add you code here -->
+        <record id="res_partner_view_form" model="ir.ui.view">
+            <field name="name">res.partner.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_view_absences"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-calendar">
+                        <field name="absence_count" widget="statinfo" string="Absences" />
+                    </button>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

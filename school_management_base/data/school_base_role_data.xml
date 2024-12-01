@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_role_0" model="school.base.role">
+        <field name="name">Student</field>
+    </record>
+    <record id="res_partner_role_1" model="school.base.role">
+        <field name="name">Teacher</field>
+    </record>
+    <record id="res_partner_role_2" model="school.base.role">
+        <field name="name">Secretariat/Direction</field>
+    </record>
+    <record id="res_partner_role_3" model="school.base.role">
+        <field name="name">Parent</field>
+    </record>
+    <record id="res_partner_role_4" model="school.base.role">
+        <field name="name">Others</field>
+    </record>
+</odoo>

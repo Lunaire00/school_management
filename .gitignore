@@ -1,0 +1,14 @@
+__pycache__/
+.env
+.venv
+env/
+venv/
+ENV/
+.pyc
+.idea/
+school_diary/models/__pycache__/comment_type.cpython-312.pyc
+*.pyc
+school_diary/models/__pycache__/absences.cpython-312.pyc
+school_diary/models/__pycache__/absences.cpython-312.pyc
+/school_diary/models/__pycache__
+*.pyc

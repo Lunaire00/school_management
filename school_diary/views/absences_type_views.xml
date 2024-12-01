@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <!--Absence type view tree-->
+        <record id="absence_type_views" model="ir.ui.view">
+            <field name="name">absence.type.tree</field>
+            <field name="model">absence.type</field>
+            <field name="arch" type="xml">
+                <tree string="Absence type" editable="bottom">
+                    <field name="name" />
+                    <field name="is_justify" />
+                </tree>
+            </field>
+        </record>
+        <!--Absence
+        type action-->
+        <record model="ir.actions.act_window" id="action_absence_type">
+            <field name="name">Type of absence</field>
+            <field name="res_model">absence.type</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <!--comment type view tree-->
+        <record id="comment_type_views" model="ir.ui.view">
+            <field name="name">comment.type.tree</field>
+            <field name="model">comment.type</field>
+            <field name="arch" type="xml">
+                <tree string="Comment Type" editable="bottom">
+                    <field name="name" />
+                    <field name="gravity_level" />
+                </tree>
+            </field>
+        </record>
+        <!--comment
+        type action-->
+        <record model="ir.actions.act_window" id="action_comment_type">
+            <field name="name">Type of comment</field>
+            <field name="res_model">comment.type</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>

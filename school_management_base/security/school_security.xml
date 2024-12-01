@@ -1,0 +1,17 @@
+<odoo>
+    <record id="school_security_category" model="ir.module.category">
+        <field name="name">School Security</field>
+        <field name="description">School Security</field>
+    </record>
+    
+    <record id="school_super_admin" model="res.groups">
+        <field name="name">School administrator</field>
+        <field name="category_id" ref="school_security_category"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record id="teacher_group_security" model="res.groups">
+        <field name="name">Teacher</field>
+        <field name="category_id" ref="school_security_category"/>
+    </record>
+</odoo>

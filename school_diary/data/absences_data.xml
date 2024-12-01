@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="absences_1_data" model="absences">
+
+            <field name="student_id" ref="school_management_base.res_partner_school_student_1" />
+            <field name="teacher_who_noted_absence_id"
+                ref="school_management_base.res_partner_school_teacher_1" />
+            <field name="time_of_absence">morning</field>
+            <field name="absence_type_id" ref="familly_death_data" />
+        </record>
+
+        <record id="absences_2_data" model="absences">
+            <field name="student_id" ref="base.res_partner_18" />
+            <field name="teacher_who_noted_absence_id" ref="base.res_partner_10" />
+            <field name="time_of_absence">afternoon</field>
+            <field name="absence_type_id" ref="familly_death_data" />
+            <field name="is_confirm">True</field>
+        </record>
+
+    </data>
+</odoo>

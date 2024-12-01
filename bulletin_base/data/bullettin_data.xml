@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate='1'>
+        <record id='bullettin_1' model='bulletin'>
+            <field name="student_id" ref= "school_management_base.res_partner_school_student_2"/>
+            <field name='period_id' ref="period_2"/>
+        </record>
+         <record id='bullettin_2' model='bulletin'>
+            <field name="student_id" ref= "school_management_base.res_partner_school_student_3"/>
+            <field name='period_id' ref="period_1"/>
+        </record>
+         <record id='bullettin_3' model='bulletin'>
+            <field name="student_id" ref= "school_management_base.res_partner_school_student_1"/>
+            <field name='period_id' ref="period_1"/>
+        </record>
+         <record id='bullettin_4' model='bulletin'>
+            <field name="student_id" ref= "school_management_base.res_partner_school_student_4"/>
+            <field name='period_id' ref="period_3"/>
+        </record>
+    </data>
+</odoo>

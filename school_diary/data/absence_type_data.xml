@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="sieckness_data" model="absence.type">
+            <field name="name">Sieckness</field>
+            <field name="is_justify">True</field>
+        </record>
+        <record id="familly_death_data" model="absence.type">
+            <field name="name">Family death</field>
+            <field name="is_justify">True</field>
+        </record>
+        <record id="school_trip_data" model="absence.type">
+            <field name="name">School trip</field>
+            <field name="is_justify">True</field>
+        </record>
+        <record id="outside_data" model="absence.type">
+            <field name="name">Outside</field>
+            <field name="is_justify">False</field>
+        </record>
+        <record id="skip_classes_data" model="absence.type">
+            <field name="name">Skip classes</field>
+            <field name="is_justify">False</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="parents_mail" model="mail.template">
+            <field name="name">Parents Mail</field>
+            <field name="model_id" ref="school_diary.model_absences"/>
+            <field name="subject">{{ object.student_id.name}} absences</field>
+            <field name="email_from">{{ (user.email_formatted) }}</field>
+            <field name="partner_to">{{ object.parents_student_id.id }}</field>
+            <field name="body_html" type="html">
+<div>
+    <p>
+        <t t-if="object.rel_is_justified == True">
+
+            <t t-set="name_student" t-value="object.student_id.name"/>
+            Hello,
+            <br></br>
+            we contact you to tell you that your child : 
+            <t t-out="name_student"/>
+            has been absent.
+            <br></br>
+            The absence is justified
+        </t>
+        <t t-elif="object.rel_is_justified == False">
+            <t t-set="name_student" t-value="object.student_id.name"/>
+            Hello,
+            <br></br>
+            we contact you to tell you that your child : 
+            <t t-out="name_student"/>
+            has been absent.
+            <br></br>
+            The absence is unjustified
+        </t>
+    </p>
+</div>
+
+
+
+
+            </field>
+        </record>
+        
+
+    </data>
+</odoo>

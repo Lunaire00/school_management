@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- View comment View Tree -->
+        <record id="view_comment_tree" model="ir.ui.view">
+            <field name="name">view.comment.tree</field>
+            <field name="model">comment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="student_class" />
+                    <field name="student_id" />
+                    <field name="teacher_id" />
+                    <field name="type_comment_id" />
+                    <field name="rel_gravity_level" />
+                    <field name="is_confirm" widget="boolean_toggle" readonly="1" />
+                    <button name="%(school_diary.action_report_comment)d" type="action"
+                        icon="fa-print" string="Print Report" />
+
+
+                </tree>
+            </field>
+        </record>
+
+        <!-- View comment form -->
+        <record id="view_comment_form" model="ir.ui.view">
+            <field name="name">view.comment.form</field>
+            <field name="model">comment</field>
+            <field name="arch" type="xml">
+                <form string="Comment">
+                    <header>
+                        <button string="Send mail" name="action_send_mail_comment_to_parents"
+                            type="object" class="oe_highlight" />
+                    </header>
+                    <sheet>
+                        <group>
+
+                            <field name="student_class" />
+                            <field name="student_id" />
+                            <field name="teacher_id" />
+                            <field name="type_comment_id" />
+                            <field name="rel_gravity_level" />
+                            <field name="is_confirm" widget="boolean_toggle" />
+                        </group>
+
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="activity_ids" widget="mail_activity" />
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Action comment -->
+        <record id="action_comment" model="ir.actions.act_window">
+            <field name="name">Comment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">comment</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--comment
+        menu-->
+        <menuitem id="comment_config_root"
+            name="Comment Student"
+            parent="school_diary.shcool_diary_root"
+            action="action_comment"
+            sequence="2" />
+
+    </data>
+</odoo>
